@@ -2,7 +2,7 @@ import nextConnect from 'next-connect';
 
 const dbModel = require("../../../db/db");
 
-const handler = nextConnect()
+/*const handler = nextConnect()
     .get(async (req, res) => {
         // Récupération de tous les joueurs
         const playersObj = await dbModel.db['players'].findAll();
@@ -23,4 +23,28 @@ const handler = nextConnect()
         res.json(newPlayer);
     });
 
-export default handler;
+export default handler;*/
+
+/*export default function handler(req, res) {
+    if (req.method === 'GET'){
+        // Récupération de tous les joueurs
+        const playersObj = dbModel.db['players'].findAll();
+        const players = JSON.stringify(playersObj);
+
+        res.statusCode = 200;
+        res.json(players);
+    }
+}*/
+
+export default function handler(req, res) {
+    if (req.method === 'GET'){
+        // Récupération de tous les joueurs
+        dbModel.db['players'].findAll().then((p) => {
+            const players = JSON.stringify(p);
+
+            res.status(200).json(players);
+        }).catch((err) => {
+            res.status(err.statusCode).json({});
+        });
+    }
+}

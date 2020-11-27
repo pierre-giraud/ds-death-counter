@@ -39,12 +39,16 @@ export default handler;*/
 export default function handler(req, res) {
     if (req.method === 'GET'){
         // Récupération de tous les joueurs
-        dbModel.db['players'].findAll().then((p) => {
-            const players = JSON.stringify(p);
+        try {
+            dbModel.db['players'].findAll().then((p) => {
+                const players = JSON.stringify(p);
 
-            res.status(200).json(players);
-        }).catch((err) => {
-            res.status(err.statusCode).json({});
-        });
+                res.status(200).json(players);
+            }).catch((err) => {
+                res.status(err.statusCode || 500).json({});
+            });
+        } catch (e) {
+            res.status(500).json({});
+        }
     }
 }

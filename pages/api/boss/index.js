@@ -28,26 +28,36 @@ export default handler;*/
 
 export default function handler(req, res) {
     if (req.method === 'GET'){
-        // Récupération de tous les boss
-        dbModel.db['bosses'].findAll().then((b) => {
-            const bosses = JSON.stringify(b);
+        try {
+            // Récupération de tous les boss
+            dbModel.db['bosses'].findAll().then((b) => {
+                const bosses = JSON.stringify(b);
 
-            res.status(200).json(bosses);
-        }).catch((err) => {
-            res.status(err.statusCode).json({});
-        });
+                res.status(200).json(bosses);
+            }).catch((err) => {
+                res.status(err.statusCode).json({});
+            });
+        } catch (e) {
+            res.status(500).json({});
+        }
+
     } else if (req.method === 'POST'){
-        const { body } = req;
-        const { name } = body;
+        try {
+            const { body } = req;
+            const { name } = body;
 
-        dbModel.db["bosses"].create({
-            name: name,
-        }).then((b) => {
-            const boss = JSON.stringify(b);
+            dbModel.db["bosses"].create({
+                name: name,
+            }).then((b) => {
+                const boss = JSON.stringify(b);
 
-            res.status(200).json(boss);
-        }).catch((err) => {
-            res.status(err.statusCode).json({});
-        });
+                res.status(200).json(boss);
+            }).catch((err) => {
+                res.status(err.statusCode || 500).json({});
+            });
+        } catch (e) {
+            res.status(500).json({});
+        }
+
     }
 }

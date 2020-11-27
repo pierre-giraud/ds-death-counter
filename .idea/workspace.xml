@@ -2,41 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4a95e59-1971-4a3d-9a34-f6d67bc15636" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.sequelizerc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ConfirmUpdate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/MainComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/admin/AdminCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/admin/AdminCardBody.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/admin/AdminCardStatus.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/admin/AdminCardTitle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/admin/AdminPanel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/cards/PlayerCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/cards/PlayerCardBattles.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/cards/PlayerCardTitle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/cards/TableRow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/db.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/model/model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/_document.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/battle/[playerId]/[bossId].js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/battle/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/boss/[bossName].js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/boss/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/player/[playerName].js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/player/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/reset/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ds-death-counter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ds-death-counter.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/hello.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/hello.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/Home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Home.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/db.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +91,7 @@
       <workItem from="1605582193409" duration="4502000" />
       <workItem from="1606257280807" duration="49000" />
       <workItem from="1606420869792" duration="16559000" />
-      <workItem from="1606484897431" duration="16074000" />
+      <workItem from="1606484897431" duration="18728000" />
     </task>
     <servers />
   </component>

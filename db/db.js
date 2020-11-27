@@ -1,6 +1,7 @@
 import {Sequelize} from "sequelize";
 
 const model = require('./model/model');
+const sqlite = require('sqlite3');
 const db = {};
 
 // Connexion à la base de données

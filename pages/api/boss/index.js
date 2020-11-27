@@ -40,7 +40,6 @@ export default function handler(req, res) {
         } catch (e) {
             res.status(500).json({});
         }
-
     } else if (req.method === 'POST'){
         try {
             const { body } = req;

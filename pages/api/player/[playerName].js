@@ -11,6 +11,7 @@ const handler = nextConnect()
         });
 
         const player = JSON.stringify(playerObj);
+        res.statusCode = 200;
         res.json(player);
     });
 

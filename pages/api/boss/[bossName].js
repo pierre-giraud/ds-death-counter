@@ -12,6 +12,7 @@ const handler = nextConnect()
 
         const boss = JSON.stringify(bossObj);
         res.json(boss);
+        res.statusCode = 200;
     });
 
 export default handler;

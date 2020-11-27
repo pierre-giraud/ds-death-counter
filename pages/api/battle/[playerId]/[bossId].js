@@ -15,9 +15,11 @@ const handler = nextConnect()
 
         if (battleObj === null){
             console.log("No battle found");
+            res.statusCode = 200;
             res.json({deaths: 0});
         } else {
             const battle = JSON.stringify(battleObj);
+            res.statusCode = 200;
             res.json(battle);
         }
     });

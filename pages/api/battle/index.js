@@ -22,11 +22,13 @@ const handler = nextConnect()
             });
 
             await dbModel.db.sequelize.sync();
+            res.statusCode = 200;
             res.json(JSON.stringify(bat));
         } else {
             battle.deaths = deaths;
             await battle.save();
 
+            res.statusCode = 200;
             res.json(JSON.stringify(battle));
         }
     });

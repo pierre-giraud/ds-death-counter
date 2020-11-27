@@ -9,6 +9,7 @@ const handler = nextConnect()
         const bosses = JSON.stringify(bossesObj);
 
         res.json(bosses);
+        res.statusCode = 200;
     })
     .post(async (req, res) => {
         const { body } = req;
@@ -19,6 +20,7 @@ const handler = nextConnect()
         });
 
         res.json(newBoss);
+        res.statusCode = 200;
     });
 
 export default handler;

@@ -8,6 +8,7 @@ const handler = nextConnect()
         const playersObj = await dbModel.db['players'].findAll();
         const players = JSON.stringify(playersObj);
 
+        res.statusCode = 200;
         res.json(players);
     })
     .post(async (req, res) => {
@@ -18,6 +19,7 @@ const handler = nextConnect()
             name: name,
         });
 
+        res.statusCode = 200;
         res.json(newPlayer);
     });
 

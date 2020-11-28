@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api/player/index.js": {
-      "includeFiles" : "db/**"
-    }
-  }
-}

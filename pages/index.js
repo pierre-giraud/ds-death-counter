@@ -25,24 +25,6 @@ const Content = () => {
         getBosses().then((bosses) => {
             if (bosses !== null && bosses.length > 0) setBossList(bosses);
         });
-
-        /*let players = [];
-        let bosses = [];
-
-        async function fetchPlayers(){
-            players = await getPlayers(); // On attend les joueurs
-        }
-
-        async function fetchBosses(){
-            bosses = await getBosses(); // On attend les bosses
-        }
-
-        // Récupération des joueurs PUIS ... (promesse)
-        fetchPlayers().then(() => setPlayerList(players));
-
-        // Récupération des bosses PUIS ... (promesse)
-        fetchBosses().then(() => setBossList(bosses));*/
-
     }, []);
 
     return (

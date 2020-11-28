@@ -16,6 +16,8 @@ db["bosses"] = model.getBosses(sequelize);
 db["battles"] = model.getBattles(sequelize);
 db.sequelize = sequelize;
 
+console.log("SEQUELIZE MDRRRRRRRRRRRRR");
+
 async function connect() {
     let connectionOK = false;
     try {

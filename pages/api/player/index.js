@@ -79,5 +79,15 @@ export default async (req, res) => {
     if (req.method === 'GET'){
         const players = await middleware(req, res);
         res.status(200).json(JSON.stringify(players));
+    } else if (req.method === 'POST'){
+        const { body } = req;
+        const { name } = body;
+
+        const newPlayer = await dbModel.db["players"].create({
+            name: name,
+        });
+
+        res.statusCode = 200;
+        res.json(newPlayer);
     }
 };

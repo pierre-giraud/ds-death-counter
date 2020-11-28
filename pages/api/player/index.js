@@ -59,7 +59,7 @@ export default (req, res) => {
             }).then((player) => {
                 res.status(200).json(JSON.stringify(player));
             }).catch((err) => {
-                res.status(err.statusCode).json([{"Message" : "Erreur lors de l'écriture de la base de données"}]);
+                res.status(500).json([{"Message" : err.toString()}]);
             });
         }catch (e) {
             res.status(500).json([{"message" : "Une erreur inconnue est survenue"}]);

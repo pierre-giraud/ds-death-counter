@@ -1,13 +1,17 @@
 import {Sequelize} from "sequelize";
 
 const model = require('./model/model');
-const sqlite = require('sqlite3');
+const sqlite = require('sqlite3').verbose();
 const db = {};
+
+const path = require('path');
+const dbPath = path.resolve(process.cwd(), 'db/db.sqlite');
+console.log(dbPath);
 
 // Connexion à la base de données
 let sequelize = new Sequelize({
     dialect: 'sqlite',
-    storage: process.cwd() + "\\db\\db.sqlite"
+    storage: dbPath
 });
 
 // Récupération du modèle

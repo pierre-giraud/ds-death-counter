@@ -35,10 +35,10 @@ export default function handler(req, res) {
 
                 res.status(200).json(bosses);
             }).catch((err) => {
-                res.status(err.statusCode).json({});
+                res.status(err.statusCode).json([{"Message" : "Erreur du findAll"}]);
             });
         } catch (e) {
-            res.status(500).json({});
+            res.status(500).json([{"Message" : "Erreur du findAll"}]);
         }
     } else if (req.method === 'POST'){
         try {

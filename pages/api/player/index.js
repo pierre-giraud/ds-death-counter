@@ -43,12 +43,14 @@ export default function handler(req, res) {
             dbModel.db['players'].findAll().then((p) => {
                 const players = JSON.stringify(p);
 
+                console.log(players);
+
                 res.status(200).json(players);
             }).catch((err) => {
-                res.status(err.statusCode || 500).json({"Message" : "Erreur du findAll"});
+                res.status(err.statusCode || 500).json([{"Message" : "Erreur du findAll"}]);
             });
         } catch (e) {
-            res.status(500).json({"message" : "Erreur du try catch"});
+            res.status(500).json([{"message" : "Erreur du try catch"}]);
         }
     }
 }

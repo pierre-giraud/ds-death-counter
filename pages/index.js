@@ -18,7 +18,15 @@ const Content = () => {
         // Permet de reset la base de données
         // resetDatabase().then(r => console.log("Base de données réinitialisée"));
 
-        let players = [];
+        getPlayers().then((players) => {
+            setPlayerList(players)
+        });
+
+        getBosses().then((bosses) => {
+            setBossList(bosses)
+        });
+
+        /*let players = [];
         let bosses = [];
 
         async function fetchPlayers(){
@@ -33,7 +41,7 @@ const Content = () => {
         fetchPlayers().then(() => setPlayerList(players));
 
         // Récupération des bosses PUIS ... (promesse)
-        fetchBosses().then(() => setBossList(bosses));
+        fetchBosses().then(() => setBossList(bosses));*/
 
     }, []);
 

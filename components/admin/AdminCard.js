@@ -79,11 +79,13 @@ function AdminCard({title, type}){
                if (players !== null && players.length < 4){
                     getEntity(character, entityName).then((entity) => {
                         if (entity !== null && entity.length === 0 ) {
-                            insertEntity(character, entityName).then(() => {
-                                getEntities(character).then((entities) => {
-                                    type === 0 ? setPlayerList(entities) : setBossList(entities);
-                                    setStatus(0);
-                                })
+                            insertEntity(character, entityName).then((ent) => {
+                                if (ent !== null){
+                                    getEntities(character).then((entities) => {
+                                        type === 0 ? setPlayerList(entities) : setBossList(entities);
+                                        setStatus(0);
+                                    })
+                                }
                             })
                         } else {
                             setStatus(2);

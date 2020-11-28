@@ -22,9 +22,9 @@ const Content = () => {
             if (players !== null && players.length > 0) setPlayerList(players);
         });
 
-        /*getBosses().then((bosses) => {
+        getBosses().then((bosses) => {
             if (bosses !== null && bosses.length > 0) setBossList(bosses);
-        });*/
+        });
     }, []);
 
     return (

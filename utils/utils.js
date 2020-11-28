@@ -32,18 +32,45 @@ export async function resetDatabase(){
     await fetch(`${baseApiUrl}/reset`, options);
 }
 
-export async function getPlayers(){
+/*export async function getPlayers(){
     const { origin } = absoluteUrl();
     const baseApiUrl = `${origin}/api`;
+
     const playersAPI = await fetch(`${baseApiUrl}/player`);
     return await playersAPI.json();
+}*/
+
+export function getPlayers(){
+    const { origin } = absoluteUrl();
+    const baseApiUrl = `${origin}/api`;
+
+    return fetch(`${baseApiUrl}/player`).then((response) => {
+        if (response.status !== 200) {
+            return null;
+        }
+
+        return response.json();
+    });
 }
 
-export async function getBosses(){
+/*export async function getBosses(){
     const { origin } = absoluteUrl();
     const baseApiUrl = `${origin}/api`;
     const bossesAPI = await fetch(`${baseApiUrl}/boss`);
     return await bossesAPI.json();
+}*/
+
+export function getBosses(){
+    const { origin } = absoluteUrl();
+    const baseApiUrl = `${origin}/api`;
+
+    return fetch(`${baseApiUrl}/boss`).then((response) => {
+        if (response.status !== 200) {
+            return null;
+        }
+
+        return response.json();
+    });
 }
 
 export async function getBattle(pid, bid){

@@ -19,11 +19,11 @@ const Content = () => {
         // resetDatabase().then(r => console.log("Base de données réinitialisée"));
 
         getPlayers().then((players) => {
-            setPlayerList(players)
+            if (players !== null && players.length > 0) setPlayerList(players);
         });
 
         getBosses().then((bosses) => {
-            setBossList(bosses)
+            if (bosses !== null && bosses.length > 0) setBossList(bosses);
         });
 
         /*let players = [];

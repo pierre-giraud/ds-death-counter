@@ -38,14 +38,10 @@ export default handler;*/
 
 export default function handler(req, res) {
     if (req.method === 'GET'){
-        // Récupération de tous les joueurs
         try {
-            dbModel.db['players'].findAll().then((p) => {
-                const players = JSON.stringify(p);
-
-                console.log(players);
-
-                res.status(200).json(players);
+            // Récupération de tous les joueurs
+            dbModel.db['players'].findAll().then((players) => {
+                res.status(200).json(JSON.stringify(players));
             }).catch((err) => {
                 res.status(err.statusCode || 500).json([{"Message" : "Erreur du findAll"}]);
             });

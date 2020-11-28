@@ -36,15 +36,30 @@ export default handler;*/
     }
 }*/
 
-module.exports = (req, res) => {
+/*
+export default (req, res) => {
     if (req.method === 'GET'){
         try {
             // Récupération de tous les joueurs
             dbModel.db['players'].findAll().then((players) => {
                 res.status(200).json(JSON.stringify(players));
             }).catch((err) => {
-                res.status(err.statusCode).json([{"Message" : "Erreur du findAll"}]);
+                res.status(err.statusCode).json([{"Message" : "Erreur lors de la lecture de la base de données"}]);
             });
+        } catch (e) {
+            res.status(500).json([{"message" : "Erreur du try catch"}]);
+        }
+    }
+};*/
+
+export default (req, res) => {
+    if (req.method === 'GET'){
+        try {
+            // Récupération de tous les joueurs
+            (async () => {
+                const players = await dbModel.db['players'].findAll();
+                res.status(200).json(JSON.stringify(players));
+            })();
         } catch (e) {
             res.status(500).json([{"message" : "Erreur du try catch"}]);
         }

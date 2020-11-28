@@ -52,7 +52,7 @@ export default (req, res) => {
     }
 };*/
 
-module.exports = (req, res) => {
+/*export default (req, res) => {
     if (req.method === 'GET'){
         try {
             // Récupération de tous les joueurs
@@ -64,5 +64,20 @@ module.exports = (req, res) => {
         } catch (e) {
             res.status(500).json([{"message" : "Erreur du try catch"}]);
         }
+    }
+};*/
+
+
+function middleware(req, res) {
+    return new Promise((resolve, reject) => {
+        const players = dbModel.db['players'].findAll();
+        return resolve(players);
+    })
+}
+
+export default async (req, res) => {
+    if (req.method === 'GET'){
+        const players = await middleware(req, res);
+        res.status(200).json(JSON.stringify(players));
     }
 };

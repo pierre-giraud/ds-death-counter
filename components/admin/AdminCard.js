@@ -5,7 +5,7 @@ import AdminCardBody from "./AdminCardBody";
 import AdminCardStatus from "./AdminCardStatus";
 import {useSetRecoilState} from "recoil";
 import {_bosses, _players} from "../../pages/_app";
-import {absoluteUrl, getPlayers} from "../../utils/utils";
+import {absoluteUrl, getEntities, getEntity, getPlayers, insertEntity} from "../../utils/utils";
 import styles from "../../styles/Home.module.css";
 
 const Container = styled.div`
@@ -37,7 +37,7 @@ function AdminCard({title, type}){
             setStatus(1);
         } else { // Sinon on vérifie que le nom est valide
             // Récupération du nombre d'instances de joueurs
-            let players = await getPlayers();
+           /* let players = await getPlayers();
 
             // Limite du nombre de joueurs à 4
             if (players.length < 4){
@@ -45,7 +45,7 @@ function AdminCard({title, type}){
                 const { origin } = absoluteUrl();
                 const baseApiUrl = `${origin}/api`;
 
-                // Récupération du joueur correspondant
+                // Récupération de l'entité correspondant
                 const entAPI = await fetch(`${baseApiUrl}/${character}/${entityName}`);
                 const ent = await entAPI.json();
 
@@ -61,7 +61,7 @@ function AdminCard({title, type}){
                     // Insertion d'une nouvelle entrée
                     await fetch(`${baseApiUrl}/${character}`, options);
 
-                    // Récupération des joueurs pour MAJ de l'interface
+                    // Récupération des entités pour MAJ de l'interface
                     const entitiesAPI = await fetch(`${baseApiUrl}/${character}`);
                     const entities = await entitiesAPI.json();
 
@@ -73,7 +73,26 @@ function AdminCard({title, type}){
                 }
             } else {
                 setStatus(3);
-            }
+            }*/
+
+           getPlayers().then((players) => {
+               if (players !== null && players.length < 4){
+                    getEntity(character, entityName).then((entity) => {
+                        if (entity !== null && entity.length === 0 ) {
+                            insertEntity(character, entityName).then(() => {
+                                getEntities(character).then((entities) => {
+                                    type === 0 ? setPlayerList(entities) : setBossList(entities);
+                                    setStatus(0);
+                                })
+                            })
+                        } else {
+                            setStatus(2);
+                        }
+                    })
+               } else {
+                   setStatus(3);
+               }
+           })
         }
     }
 

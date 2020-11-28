@@ -36,7 +36,7 @@ export default handler;*/
     }
 }*/
 
-/*
+
 export default (req, res) => {
     if (req.method === 'GET'){
         try {
@@ -47,10 +47,25 @@ export default (req, res) => {
                 res.status(err.statusCode).json([{"Message" : "Erreur lors de la lecture de la base de données"}]);
             });
         } catch (e) {
-            res.status(500).json([{"message" : "Erreur du try catch"}]);
+            res.status(500).json([{"message" : "Une erreur inconnue est survenue"}]);
+        }
+    } else if (req.method === 'POST'){
+        try {
+            const { body } = req;
+            const { name } = body;
+
+            dbModel.db["players"].create({
+                name: name,
+            }).then((player) => {
+                res.status(200).json(player);
+            }).catch((err) => {
+                res.status(err.statusCode).json([{"Message" : "Erreur lors de l'écriture de la base de données"}]);
+            });
+        }catch (e) {
+            res.status(500).json([{"message" : "Une erreur inconnue est survenue"}]);
         }
     }
-};*/
+};
 
 /*export default (req, res) => {
     if (req.method === 'GET'){
@@ -68,7 +83,7 @@ export default (req, res) => {
 };*/
 
 
-function middleware(req, res) {
+/*function middleware(req, res) {
     return new Promise((resolve, reject) => {
         const players = dbModel.db['players'].findAll();
         return resolve(players);
@@ -90,4 +105,4 @@ export default async (req, res) => {
         res.statusCode = 200;
         res.json(newPlayer);
     }
-};
+};*/

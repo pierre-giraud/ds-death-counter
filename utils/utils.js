@@ -32,14 +32,6 @@ export async function resetDatabase(){
     await fetch(`${baseApiUrl}/reset`, options);
 }
 
-/*export async function getPlayers(){
-    const { origin } = absoluteUrl();
-    const baseApiUrl = `${origin}/api`;
-
-    const playersAPI = await fetch(`${baseApiUrl}/player`);
-    return await playersAPI.json();
-}*/
-
 export function getPlayers(){
     const { origin } = absoluteUrl();
     const baseApiUrl = `${origin}/api`;
@@ -53,19 +45,61 @@ export function getPlayers(){
     });
 }
 
-/*export async function getBosses(){
-    const { origin } = absoluteUrl();
-    const baseApiUrl = `${origin}/api`;
-    const bossesAPI = await fetch(`${baseApiUrl}/boss`);
-    return await bossesAPI.json();
-}*/
-
 export function getBosses(){
     const { origin } = absoluteUrl();
     const baseApiUrl = `${origin}/api`;
 
     return fetch(`${baseApiUrl}/boss`).then((response) => {
         if (response.status !== 200) {
+            return null;
+        }
+
+        return response.json();
+    });
+}
+
+export function getEntity(type, name){
+    const { origin } = absoluteUrl();
+    const baseApiUrl = `${origin}/api`;
+
+    // Récupération de l'entité correspondant
+    return fetch(`${baseApiUrl}/${type}/${name}`).then((response) => {
+        if (response.status !== 200){
+            return null;
+        }
+
+        return response.json();
+    });
+}
+
+export function getEntities(type){
+    const { origin } = absoluteUrl();
+    const baseApiUrl = `${origin}/api`;
+
+    // Récupération de l'entité correspondant
+    return fetch(`${baseApiUrl}/${type}`).then((response) => {
+        if (response.status !== 200){
+            return null;
+        }
+
+        return response.json();
+    });
+}
+
+export function insertEntity(type, name){
+    const { origin } = absoluteUrl();
+    const baseApiUrl = `${origin}/api`;
+
+    // Création des options de la requête POST
+    const options = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name })
+    };
+
+    // Insertion d'une nouvelle entité
+    return fetch(`${baseApiUrl}/${type}`, options).then((response) => {
+        if (response.status !== 200){
             return null;
         }
 

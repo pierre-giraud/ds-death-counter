@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/player/index.js": {
-      "includeFiles" : "db/db.sqlite"
+      "includeFiles" : "db/**"
     }
   }
 }

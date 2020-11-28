@@ -123,7 +123,7 @@ function AdminCard({title, type}){
                 </AdminCardStatus>}
             {status === 3 &&
                 <AdminCardStatus color={"red"}>
-                    Nombre limite de joueurs atteint
+                    Limite de joueurs atteinte
                 </AdminCardStatus>}
         </Container>
     )

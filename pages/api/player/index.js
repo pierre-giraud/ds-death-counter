@@ -54,13 +54,21 @@ export default (req, res) => {
             const { body } = req;
             const { name } = body;
 
-            dbModel.db["players"].create({
-                name: name,
+            async function insert(){
+                return await dbModel.db["players"].create({name: name});
+            }
+
+            insert().then((player) => {
+                res.status(200).json(JSON.stringify(player));
+            })
+
+            /*dbModel.db["players"].create({
+                name: name
             }).then((player) => {
-                res.status(200).json(player);
+                res.status(200).json(JSON.stringify(player));
             }).catch((err) => {
                 res.status(err.statusCode).json([{"Message" : "Erreur lors de l'écriture de la base de données"}]);
-            });
+            });*/
         }catch (e) {
             res.status(500).json([{"message" : "Une erreur inconnue est survenue"}]);
         }

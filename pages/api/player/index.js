@@ -36,17 +36,17 @@ export default handler;*/
     }
 }*/
 
-export default function handler(req, res) {
+module.exports = (req, res) => {
     if (req.method === 'GET'){
         try {
             // Récupération de tous les joueurs
             dbModel.db['players'].findAll().then((players) => {
                 res.status(200).json(JSON.stringify(players));
             }).catch((err) => {
-                res.status(err.statusCode || 500).json([{"Message" : "Erreur du findAll"}]);
+                res.status(err.statusCode).json([{"Message" : "Erreur du findAll"}]);
             });
         } catch (e) {
             res.status(500).json([{"message" : "Erreur du try catch"}]);
         }
     }
-}
+};

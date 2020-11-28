@@ -5,8 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/api/boss/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/boss/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/api/player/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/player/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +92,7 @@
       <workItem from="1605582193409" duration="4502000" />
       <workItem from="1606257280807" duration="49000" />
       <workItem from="1606420869792" duration="16559000" />
-      <workItem from="1606484897431" duration="29384000" />
+      <workItem from="1606484897431" duration="29766000" />
     </task>
     <servers />
   </component>

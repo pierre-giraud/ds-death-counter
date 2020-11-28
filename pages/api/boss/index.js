@@ -36,7 +36,7 @@ export default function handler(req, res) {
                 res.status(err.statusCode).json([{"Message" : "Erreur du findAll"}]);
             });
         } catch (e) {
-            res.status(500).json([{"Message" : "Erreur du findAll"}]);
+            res.status(500).json([{"message" : "Erreur du try catch"}]);
         }
     } else if (req.method === 'POST'){
         try {

@@ -7,7 +7,7 @@ const db = {};
 // Connexion à la base de données
 let sequelize = new Sequelize({
     dialect: 'sqlite',
-    storage: process.cwd() + "/db/db.sqlite"
+    storage: process.cwd() + "\\db\\db.sqlite"
 });
 
 // Récupération du modèle

@@ -52,12 +52,13 @@ export default (req, res) => {
     }
 };*/
 
-export default (req, res) => {
+module.exports = (req, res) => {
     if (req.method === 'GET'){
         try {
             // Récupération de tous les joueurs
             (async () => {
                 const players = await dbModel.db['players'].findAll();
+                console.log(players);
                 res.status(200).json(JSON.stringify(players));
             })();
         } catch (e) {

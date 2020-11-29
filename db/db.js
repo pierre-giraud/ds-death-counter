@@ -6,7 +6,6 @@ const db = {};
 
 const path = require('path');
 const dbPath = path.resolve(process.cwd(), 'db/db.sqlite');
-console.log(dbPath);
 
 // Connexion à la base de données
 let sequelize = new Sequelize({
